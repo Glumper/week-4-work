@@ -1,0 +1,57 @@
+# guessing game
+import random
+tries = 1
+num = random.randrange(1, 75)
+while True:
+  
+  guess = input("Guess a number between 1 and 75! ")
+  if int(guess) == num:
+    print("You got it correct!")
+    print(f"It took {tries} tries to guess the number. ")
+    break
+  elif int(guess) > num:
+    print("Lower")
+    tries += 1
+  elif int(guess) < num:
+    print("Higher")
+    tries += 1
+# snakes and ladders
+
+position = 0
+while True:
+  dicenum = random.randrange(1, 6)
+  input("Press ENTER to roll the dice. ") 
+  position += dicenum
+  if position <= 100:
+    print(F"You rolled a {dicenum}!")
+    print(f"You are now on square {position} ")
+  if position == 1:
+    print("You landed on a ladder, you are now on square 38! ")
+    position += 37
+  if position == 8:
+    print("You landed on a ladder, you are now on square 30! ")
+    position += 22
+  if position == 32:
+    print("Oh no!, you landed on a snake, you are now on square 10")
+    position -= 22
+  if position == 28:
+    print("You landed on a ladder, you are now on square 76! ")
+    position += 48
+  if position == 62:
+    print("You landed on a ladder, you are now on square 99! ")
+    position -= 44
+  if position == 80:
+    print("You landed on a ladder, you are now on square 99! ")
+    position += 19
+  if position == 88:
+    print("Oh no!, you landed on a snake, you are now on square 24")
+    position -= 64
+  if position == 95:
+    print("Oh no!, you landed on a snake, you are now on square 56")
+    position -= 39
+  if position == 100:
+    print("You landed on square 100, you win!")
+    break
+  if position > 100:
+    position = position - dicenum
+    print("You went above 100, Your turn does not count.")
